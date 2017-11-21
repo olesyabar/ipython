@@ -17,8 +17,10 @@ install:
     - pip install setuptools pip --upgrade
     - pip install -e file://$PWD#egg=ipython[test] --upgrade
     - pip install codecov --upgrade
+    - sudo apt-get -y install freeglut3 libglade2-0 libgraphviz4 libgtkglext1 libgts-0.7-5
     - wget http://www.graphviz.org/pub/graphviz/stable/ubuntu/ub13.10/x86_64/graphviz_2.38.0-1~saucy_amd64.deb
-    - sudo dpkg -i graphviz_2.38.0-1~saucy_amd64.deb && apt-get -y -f install
+    - sudo dpkg -i graphviz_2.38.0-1~saucy_amd64.deb
+    - sudo apt-get -y -f install
     - rm graphviz_2.38.0-1~saucy_amd64.deb
 script:
     - cd /tmp && iptest --coverage xml && cd -
