@@ -17,7 +17,6 @@ install:
     - pip install setuptools pip --upgrade
     - pip install -e file://$PWD#egg=ipython[test] --upgrade
     - pip install codecov --upgrade
-    - sudo apt-get -y install freeglut3 libglade2-0 libgtkglext1 libgts-0.7-5
     - wget http://www.graphviz.org/pub/graphviz/stable/ubuntu/ub13.10/x86_64/libgraphviz4_2.38.0-1~saucy_amd64.deb
     - sudo dpkg -i libgraphviz4_2.38.0-1~saucy_amd64.deb
     - sudo apt-get -y -f install
