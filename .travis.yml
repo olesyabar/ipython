@@ -17,6 +17,8 @@ install:
     - pip install setuptools pip --upgrade
     - pip install -e file://$PWD#egg=ipython[test] --upgrade
     - pip install codecov --upgrade
+    - wget http://www.graphviz.org/pub/graphviz/stable/redhat/el6/i386/os/graphviz-2.38.0-1.el6.i686.rpm
+    - sudo rpm -i graphviz-2.38.0-1.el6.i686.rpm
 script:
     - cd /tmp && iptest --coverage xml && cd -
     # On the latest Python only, make sure that the docs build.
